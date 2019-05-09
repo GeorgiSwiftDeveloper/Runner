@@ -200,9 +200,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="agv-Ju-ZBA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="agv-Ju-ZBA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="g9P-Mq-Uwt">
                                 <rect key="frame" x="144.5" y="389" width="86" height="62"/>
@@ -282,6 +281,11 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="813-FZ-DHZ">
                                 <rect key="frame" x="283" y="552" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="BhT-bl-A2t"/>
+                                    <constraint firstAttribute="width" secondItem="813-FZ-DHZ" secondAttribute="height" multiplier="1:1" id="PqY-Gy-JQ6"/>
+                                    <constraint firstAttribute="width" constant="75" id="S9p-qJ-6Um"/>
+                                </constraints>
                                 <state key="normal" image="pauseButton"/>
                                 <connections>
                                     <action selector="pauseBtnPressed:" destination="Tfv-92-oaf" eventType="touchUpInside" id="90V-aa-Xd9"/>
@@ -300,6 +304,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="813-FZ-DHZ" firstAttribute="leading" secondItem="wt7-w6-U0p" secondAttribute="trailing" constant="-20.5" id="0l3-Px-rsG"/>
+                            <constraint firstItem="agv-Ju-ZBA" firstAttribute="trailing" secondItem="AZh-hx-BTf" secondAttribute="trailing" id="4sW-xK-EvX"/>
                             <constraint firstItem="g9P-Mq-Uwt" firstAttribute="top" secondItem="Bil-3f-KZz" secondAttribute="bottom" constant="33.5" id="5ZV-uL-VtV"/>
                             <constraint firstItem="Bil-3f-KZz" firstAttribute="top" secondItem="vdR-ru-Akj" secondAttribute="bottom" constant="36" id="78T-ti-C4c"/>
                             <constraint firstItem="GN8-KE-Oug" firstAttribute="centerX" secondItem="Bil-3f-KZz" secondAttribute="centerX" id="AIz-66-lFd"/>
@@ -315,6 +320,9 @@
                             <constraint firstItem="dLg-pW-9LN" firstAttribute="centerY" secondItem="wt7-w6-U0p" secondAttribute="centerY" id="fEo-qr-fSH"/>
                             <constraint firstItem="vdR-ru-Akj" firstAttribute="centerX" secondItem="bsK-Vn-8KF" secondAttribute="centerX" id="gDt-Eb-aZH"/>
                             <constraint firstItem="GN8-KE-Oug" firstAttribute="centerY" secondItem="Bil-3f-KZz" secondAttribute="centerY" id="hPc-U7-PXF"/>
+                            <constraint firstItem="agv-Ju-ZBA" firstAttribute="bottom" secondItem="AZh-hx-BTf" secondAttribute="bottom" id="jT5-BF-QUW"/>
+                            <constraint firstItem="agv-Ju-ZBA" firstAttribute="leading" secondItem="AZh-hx-BTf" secondAttribute="leading" id="nnp-5q-N5H"/>
+                            <constraint firstItem="agv-Ju-ZBA" firstAttribute="top" secondItem="bsK-Vn-8KF" secondAttribute="top" id="rcT-7o-ET3"/>
                             <constraint firstItem="Bil-3f-KZz" firstAttribute="trailing" secondItem="AZh-hx-BTf" secondAttribute="trailing" id="spu-xW-GcB"/>
                             <constraint firstItem="0M1-OK-i9m" firstAttribute="top" secondItem="AZh-hx-BTf" secondAttribute="top" constant="11" id="tis-Rp-TSs"/>
                             <constraint firstItem="dLg-pW-9LN" firstAttribute="centerX" secondItem="wt7-w6-U0p" secondAttribute="centerX" constant="24" id="zEX-Oo-C6T"/>
@@ -325,6 +333,7 @@
                     <connections>
                         <outlet property="distanceLbl" destination="RsZ-rW-hJB" id="f6M-dh-wYh"/>
                         <outlet property="durationLbl" destination="vdR-ru-Akj" id="Y8Z-GW-BKW"/>
+                        <outlet property="pauseBtn" destination="813-FZ-DHZ" id="Nfd-Qv-McH"/>
                         <outlet property="praceLbl" destination="9VI-zG-hfR" id="KSl-sp-GdT"/>
                         <outlet property="sliderImageView" destination="O7O-x7-k6b" id="V3w-Qp-n24"/>
                         <outlet property="swipeBGImageView" destination="wt7-w6-U0p" id="Fof-ce-JY3"/>

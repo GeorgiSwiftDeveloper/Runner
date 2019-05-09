@@ -15,6 +15,7 @@ class CurrentRunVC: LocationVC {
 
     @IBOutlet weak var swipeBGImageView: UIImageView!
  
+    @IBOutlet weak var pauseBtn: UIButton!
     @IBOutlet weak var sliderImageView: UIImageView!
     @IBOutlet weak var durationLbl: UILabel!
     @IBOutlet weak var praceLbl: UILabel!
@@ -27,6 +28,7 @@ class CurrentRunVC: LocationVC {
     var timer = Timer()
     
     var runDistance = 0.0
+    var pace = 0
     var counter = 0
     
     
@@ -41,12 +43,22 @@ class CurrentRunVC: LocationVC {
 
     func startRun() {
         manager?.startUpdatingLocation()
-        
+        startTimer()
+        pauseBtn.setImage(UIImage(named: "pauseButton"), for: .normal)
     }
     
     
     func endRun() {
         manager?.stopUpdatingLocation()
+    }
+    
+    
+    func pauseRun() {
+        startLocation = nil
+        lastLocation = nil
+        timer.invalidate()
+        manager?.stopUpdatingLocation()
+        pauseBtn.setImage(UIImage(named: "resumeButton"), for: .normal)
     }
     func startTimer()  {
         durationLbl.text = "\(counter)"
@@ -59,7 +71,18 @@ class CurrentRunVC: LocationVC {
         durationLbl.text = counter.formatTimeDuration()
     }
     
+    func calculatePace(time second: Int, miles: Double) -> String  {
+        pace = Int(Double(second) / miles)
+        return pace.formatTimeDuration()
+    }
+    
     @IBAction func pauseBtnPressed(_ sender: Any) {
+        if timer.isValid  {
+             pauseRun()
+        }else {
+            startRun()
+        }
+       
         
         
     }
@@ -82,6 +105,7 @@ class CurrentRunVC: LocationVC {
                     sliderView.center.x = sliderView.center.x + translation.x
                 }else if sliderView.center.x >= (swipeBGImageView.center.x + maxAdjust) {
                     sliderView.center.x = swipeBGImageView.center.x + maxAdjust
+                    endRun()
                     dismiss(animated: true, completion: nil)
                 }else {
                     sliderView.center.x = swipeBGImageView.center.x - minAdjust
@@ -112,6 +136,9 @@ extension CurrentRunVC: CLLocationManagerDelegate  {
         }else  if let location = locations.last{
             runDistance += lastLocation.distance(from: location)
             distanceLbl.text = "\(runDistance.metersToMiles(places: 2))"
+            if counter > 0 && runDistance > 0 {
+                praceLbl.text = calculatePace(time: counter, miles: runDistance.metersToMiles(places: 2))
+            }
         }
         lastLocation = locations.last
     }
