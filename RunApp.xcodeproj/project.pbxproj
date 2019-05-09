@@ -18,6 +18,7 @@
 		6A73544A22839C73006C3E87 /* CurrentRunVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A73544922839C73006C3E87 /* CurrentRunVC.swift */; };
 		6A73544C2283B22D006C3E87 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A73544B2283B22C006C3E87 /* Extension.swift */; };
 		6A8DA1862284A52800C0DC77 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DA1852284A52800C0DC77 /* Run.swift */; };
+		6A8DA1882284A96500C0DC77 /* Constance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DA1872284A96500C0DC77 /* Constance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		6A73544922839C73006C3E87 /* CurrentRunVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentRunVC.swift; sourceTree = "<group>"; };
 		6A73544B2283B22C006C3E87 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		6A8DA1852284A52800C0DC77 /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
+		6A8DA1872284A96500C0DC77 /* Constance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constance.swift; sourceTree = "<group>"; };
 		A2D421192610F58845872825 /* Pods_RunApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4A31D447EF628E71520DD5 /* Pods-RunApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RunApp/Pods-RunApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				6A8DA1852284A52800C0DC77 /* Run.swift */,
+				6A8DA1872284A96500C0DC77 /* Constance.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A8DA1882284A96500C0DC77 /* Constance.swift in Sources */,
 				6A73544A22839C73006C3E87 /* CurrentRunVC.swift in Sources */,
 				6A735435228373F2006C3E87 /* RunLogVC.swift in Sources */,
 				6A73544822839475006C3E87 /* LocationVC.swift in Sources */,
